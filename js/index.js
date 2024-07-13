@@ -874,6 +874,15 @@ function inputsValidation() {
 
     if (nameValidation() && emailValidation() && phoneValidation() && ageValidation() && passwordValidation() && repasswordValidation()) {
         $("#submitBtn").removeAttr("disabled");
+        $("#submitBtn").on('click',function(){
+            $("#rowData").html(`
+                <div class="container h-100 d-flex justify-content-center align-items-center">
+                    <div class="child h-50 d-flex justify-content-center align-items-center">
+                        <h1 class="pt-5 mt-5">Welcome! ${$("#nameInput").val()}</h1>
+                    </div>
+                </div>
+            `);
+        })
     } else {
         $("#submitBtn").attr("disabled", true);
     }
